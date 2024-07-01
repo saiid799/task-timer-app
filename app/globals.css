@@ -1,33 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;700&family=Ruda:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 252 245 184;
+    --foreground: 64 63 63;
+    --card: 255 255 255;
+    --card-foreground: 64 63 63;
+    --popover: 255 255 255;
+    --popover-foreground: 64 63 63;
+    --primary: 66 122 91;
+    --primary-foreground: 252 245 184;
+    --secondary: 180 205 147;
+    --secondary-foreground: 64 63 63;
+    --muted: 224 224 224;
+    --muted-foreground: 108 108 108;
+    --accent: 180 205 147;
+    --accent-foreground: 64 63 63;
+    --destructive: 255 69 58;
+    --destructive-foreground: 250 250 250;
+    --border: 209 209 209;
+    --input: 224 224 224;
+    --ring: 66 122 91;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 64 63 63;
+    --foreground: 252 245 184;
+    --card: 32 32 32;
+    --card-foreground: 252 245 184;
+    --popover: 32 32 32;
+    --popover-foreground: 252 245 184;
+    --primary: 180 205 147;
+    --primary-foreground: 64 63 63;
+    --secondary: 66 122 91;
+    --secondary-foreground: 252 245 184;
+    --muted: 48 48 48;
+    --muted-foreground: 160 160 160;
+    --accent: 66 122 91;
+    --accent-foreground: 252 245 184;
+    --destructive: 255 69 58;
+    --destructive-foreground: 250 250 250;
+    --border: 48 48 48;
+    --input: 48 48 48;
+    --ring: 180 205 147;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-header;
   }
 }
